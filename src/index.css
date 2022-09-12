@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ticket {
+  background-color: purple;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  height: 80px;
+  font-size: 60px;
+  cursor: pointer;
+  border-radius: 0px;
+  border: 1px solid black;
+}
+
+.ticket:hover{
+  opacity: 0.9
+}
+
+.ticket.active{
+  opacity: 0.6;
+}
+
