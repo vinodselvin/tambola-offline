@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b1b94563.css",
-    "main.js": "/static/js/main.1d476a2c.js",
-    "static/js/787.e54eb4d0.chunk.js": "/static/js/787.e54eb4d0.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.b1b94563.css.map": "/static/css/main.b1b94563.css.map",
-    "main.1d476a2c.js.map": "/static/js/main.1d476a2c.js.map",
-    "787.e54eb4d0.chunk.js.map": "/static/js/787.e54eb4d0.chunk.js.map"
+    "main.css": "/tambola-offline/static/css/main.b1b94563.css",
+    "main.js": "/tambola-offline/static/js/main.b70286f4.js",
+    "static/js/787.e54eb4d0.chunk.js": "/tambola-offline/static/js/787.e54eb4d0.chunk.js",
+    "static/media/logo.svg": "/tambola-offline/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/tambola-offline/index.html",
+    "main.b1b94563.css.map": "/tambola-offline/static/css/main.b1b94563.css.map",
+    "main.b70286f4.js.map": "/tambola-offline/static/js/main.b70286f4.js.map",
+    "787.e54eb4d0.chunk.js.map": "/tambola-offline/static/js/787.e54eb4d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1b94563.css",
-    "static/js/main.1d476a2c.js"
+    "static/js/main.b70286f4.js"
   ]
 }
