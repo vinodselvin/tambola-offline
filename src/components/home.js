@@ -39,7 +39,7 @@ class Home extends React.Component {
         </Grid>
         <Grid container>
             <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", marginTop: "60px"}}>
-                <Link to="/organize" style={{textDecoration: "none"}}>
+                <Link to="/tambola-offline/organize" style={{textDecoration: "none"}}>
                     <Button variant="outlined" style={{width: "100%"}} >Organize Game</Button>
                 </Link>
                 <h3 align="center">OR</h3>
@@ -47,7 +47,7 @@ class Home extends React.Component {
         </Grid>
         <Grid container>
             <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin:"auto",  marginBottom:"30px"}}>
-                <Link to="/ticket" style={{textDecoration: "none"}}>
+                <Link to="/tambola-offline/ticket" style={{textDecoration: "none"}}>
                     <Button variant="outlined" style={{width: "100%"}}>Play Game</Button>
                 </Link>
             </Grid>

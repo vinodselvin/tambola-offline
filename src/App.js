@@ -7,11 +7,13 @@ import Ticket from './components/ticket';
 
 function App() {
   return (
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="organize" element={<Organizer />} />
-        <Route path="ticket" element={<Ticket/>} />
-    </Routes>
+    <>
+      <Routes>
+          <Route path="/tambola-offline/" element={<Home />} />
+          <Route path="/tambola-offline/organize" element={<Organizer />} />
+          <Route path="/tambola-offline/ticket" element={<Ticket/>} />
+      </Routes>
+    </>
   );
 }
 
