@@ -1,9 +1,10 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import {Button, Grid} from '@mui/material';
+import {Breadcrumbs, Button, Grid, Typography} from '@mui/material';
 import { height } from '@mui/system';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 
 class Ticket extends React.Component {
@@ -74,10 +75,23 @@ class Ticket extends React.Component {
 
     render() {
         return <React.Fragment>
-            <Box sx={{ flexGrow: 1, marginTop: "70px" }}>
+            <Box sx={{ flexGrow: 1}}>
                 <Grid container>
-                    <Grid item xs={12} style={{textAlign: "center"}}>
-                        <h1>#{this.state.username}</h1>
+                    <Grid item xs={12}>
+                        <h1 align="center" className='game-title'>HOUSIE / TAMBOLA</h1>
+                    </Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item xs={6}>
+                        <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                            <Link to="/tambola-offline" color="inherit">
+                                Home
+                            </Link>
+                            <Typography color="text.primary">Organize Game</Typography>
+                        </Breadcrumbs>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <span className="w-name">Welcome, <span className="a-name">{this.state.username}</span></span>
                     </Grid>
                 </Grid>
                 <Grid container >

@@ -21,12 +21,12 @@ class Home extends React.Component {
     render() {
         return <React.Fragment>
         <Grid container>
-            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto"}}>
-                <h1>Housie Game</h1>
+            <Grid item xs={12}>
+                <h1 align="center" className='game-title'>HOUSIE / TAMBOLA</h1>
             </Grid>
         </Grid>
         <Grid container>
-            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", marginTop: "30px", marginBottom:"30px"}}>
+            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", marginTop: "45px", marginBottom:"45px"}}>
                 <TextField 
                     id="standard-basic" 
                     value={this.state.username} 
@@ -34,21 +34,24 @@ class Home extends React.Component {
                     variant="standard" 
                     style={{width: "100%"}}
                     onChange={(e) => this.inputChange('username', e.target.value)} />
-                {this.state.username && <h3>Hi, {this.state.username}</h3>}
             </Grid>
         </Grid>
         <Grid container>
-            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", marginTop: "60px"}}>
+            <Grid item xs={12}>
+                <hr/>
+            </Grid>
+        </Grid>
+        <Grid container>
+            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", paddingTop: "45px", paddingBottom: "45px"}}>
                 <Link to="/tambola-offline/organize" style={{textDecoration: "none"}}>
-                    <Button variant="outlined" style={{width: "100%"}} >Organize Game</Button>
+                    <Button variant="outlined" className="organize-btn" >Organize Game</Button>
                 </Link>
-                <h3 align="center">OR</h3>
             </Grid>
         </Grid>
         <Grid container>
             <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin:"auto",  marginBottom:"30px"}}>
                 <Link to="/tambola-offline/ticket" style={{textDecoration: "none"}}>
-                    <Button variant="outlined" style={{width: "100%"}}>Play Game</Button>
+                    <Button variant="outlined" className="organize-btn">Play Game</Button>
                 </Link>
             </Grid>
         </Grid>

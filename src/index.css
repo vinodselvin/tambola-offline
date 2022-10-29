@@ -34,5 +34,6 @@ code {
 
 #root{
   background-color: #00000012 !important;
+  height: 100vh;
 }
 

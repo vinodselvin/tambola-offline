@@ -120,3 +120,30 @@
 #panel1bh-header .MuiAccordionSummary-expandIconWrapper{
   color: white;
 }
+.organize-btn{
+  font-size: 24px !important;
+  width: 100%;
+  color: #1976d2 !important;
+  background-color: white !important;
+}
+.organize-btn:hover{
+  background-color: #1976d2 !important;
+  color: white !important;
+}
+.breadcrumbs a{
+  text-decoration: none;
+  color: #1976d2;
+}
+.breadcrumbs{
+  padding: 15px;
+  padding-bottom: 0px;
+}
+.w-name{
+  padding: 15px;
+  text-align: right;
+  font-weight: bold;
+  float: right;
+}
+.w-name > .a-name{
+  color: #1976d2;
+}

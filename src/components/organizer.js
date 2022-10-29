@@ -2,15 +2,16 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Card, Chip, Grid, Snackbar, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Button, Card, Chip, Grid, Snackbar, Typography } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Link } from 'react-router-dom';
 class Organizer extends React.Component {
     constructor() {
         super();
         this.state = {
-            username: "",
+            username: localStorage.getItem("username") || "Guest",
             series: Array.from({length: 99}, (_, index) => index + 1),
             start: false,
             selectedSeries: [],
@@ -63,6 +64,19 @@ class Organizer extends React.Component {
             <Grid container>
                 <Grid item xs={12}>
                     <h1 align="center" className='game-title'>HOUSIE / TAMBOLA</h1>
+                </Grid>
+            </Grid>
+            <Grid container>
+                <Grid item xs={6}>
+                    <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                        <Link to="/tambola-offline" color="inherit">
+                            Home
+                        </Link>
+                        <Typography color="text.primary">Organize Game</Typography>
+                    </Breadcrumbs>
+                </Grid>
+                <Grid item xs={6}>
+                    <span className="w-name">Welcome, <span className="a-name">{this.state.username}</span></span>
                 </Grid>
             </Grid>
             <Grid container>
