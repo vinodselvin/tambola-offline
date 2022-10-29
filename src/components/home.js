@@ -25,36 +25,38 @@ class Home extends React.Component {
                 <h1 align="center" className='game-title'>HOUSIE / TAMBOLA</h1>
             </Grid>
         </Grid>
-        <Grid container>
-            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", marginTop: "45px", marginBottom:"45px"}}>
-                <TextField 
-                    id="standard-basic" 
-                    value={this.state.username} 
-                    label="Enter your name" 
-                    variant="standard" 
-                    style={{width: "100%"}}
-                    onChange={(e) => this.inputChange('username', e.target.value)} />
+        <div style={{margin: "15px"}}>
+            <Grid container>
+                <Grid item xs={12} sm={12} lg={12} md={12} xl={12} style={{textAlign: "center", margin: "auto", marginTop: "45px", marginBottom:"45px"}}>
+                    <TextField 
+                        id="standard-basic" 
+                        value={this.state.username} 
+                        label="Enter your name" 
+                        variant="standard" 
+                        style={{width: "100%"}}
+                        onChange={(e) => this.inputChange('username', e.target.value)} />
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid container>
-            <Grid item xs={12}>
-                <hr/>
+            <Grid container>
+                <Grid item xs={12}>
+                    <hr/>
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid container>
-            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin: "auto", paddingTop: "45px", paddingBottom: "45px"}}>
-                <Link to="/tambola-offline/organize" style={{textDecoration: "none"}}>
-                    <Button variant="outlined" className="organize-btn" >Organize Game</Button>
-                </Link>
+            <Grid container>
+                <Grid item xs={12} sm={12} lg={12} md={12} xl={12} style={{textAlign: "center", margin: "auto", paddingTop: "45px", paddingBottom: "45px"}}>
+                    <Link to="/tambola-offline/organize" style={{textDecoration: "none"}}>
+                        <Button variant="outlined" className="organize-btn" >Organize Game</Button>
+                    </Link>
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid container>
-            <Grid item xs={12} sm={12} lg={6} md={6} xl={6} style={{textAlign: "center", margin:"auto",  marginBottom:"30px"}}>
-                <Link to="/tambola-offline/ticket" style={{textDecoration: "none"}}>
-                    <Button variant="outlined" className="organize-btn">Play Game</Button>
-                </Link>
+            <Grid container>
+                <Grid item xs={12} sm={12} lg={12} md={12} xl={12} style={{textAlign: "center", margin:"auto",  marginBottom:"30px"}}>
+                    <Link to="/tambola-offline/ticket" style={{textDecoration: "none"}}>
+                        <Button variant="outlined" className="organize-btn">Play Game</Button>
+                    </Link>
+                </Grid>
             </Grid>
-        </Grid>
+        </div>
         </React.Fragment>
     }
 }
