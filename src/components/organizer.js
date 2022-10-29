@@ -2,10 +2,10 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
-import { Chip, Grid } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Button, Card, Chip, Grid, Snackbar, Typography } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 class Organizer extends React.Component {
     constructor() {
         super();
@@ -14,7 +14,9 @@ class Organizer extends React.Component {
             series: Array.from({length: 99}, (_, index) => index + 1),
             start: false,
             selectedSeries: [],
-            current: ""
+            current: "",
+            open: false,
+            expanded: false
         };
     }
 
@@ -43,35 +45,69 @@ class Organizer extends React.Component {
         window.speechSynthesis.speak(msg);
         let selectedSeries = [...this.state.selectedSeries];
         selectedSeries.push(number);
-        this.setState({selectedSeries, current: number})
+        this.setState({selectedSeries, current: number, open: true})
     }
 
+    handleAccordion = (panel) => (event, isExpanded) => {
+        this.setState({expanded: isExpanded ? panel : false});
+    };
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        this.setState({open: false})
+    }
     render() {
         return <React.Fragment>
             <Grid container>
                 <Grid item xs={12}>
-                    <h1 align="center">Housie Game</h1>
+                    <h1 align="center" className='game-title'>HOUSIE / TAMBOLA</h1>
                 </Grid>
             </Grid>
             <Grid container>
-                <Grid item xs={12} sm={12} md={2} style={{color: "green", paddingTop: "10px", textAlign: "center", border: "2px solid black"}}>
-                    <div onClick={() => this.handleStart(true)} style={{fontSize: "80px", cursor: "pointer"}}>Pick</div>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className="pickcoin">
+                    <Button onClick={() => this.handleStart(true)} className="pick" variant="outlined">Next</Button>
                 </Grid>
-                <Grid item xs={12} sm={12} md={2} style={{color: "green", fontSize: "80px", textAlign: "center", border: "2px solid black"}}>
-                    {this.state.current}
-                </Grid>
-                <Grid item xs={12} sm={12} md={8} style={{fontSize: "50px", paddingTop: "20px", color: "red", textAlign: "center", border: "2px solid black"}}>
-                    {this.state.selectedSeries.reverse().slice(0,5).join(", ")}
+                <Grid item xs={12} sm={12} md={7} lg={7} xl={7} className="valueseries">
+                    <Accordion expanded={this.state.expanded === 'panel1'} onChange={this.handleAccordion('panel1')}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1bh-content"
+                            id="panel1bh-header"
+                        >
+                            <Typography>
+                                Last 5 picks
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {/* <Card> */}
+                            {[...this.state.selectedSeries].reverse().slice(0,5).map(selected => 
+                                <Chip label={selected} variant='filled' className={'coin'}></Chip>)
+                            }
+                            {/* </Card> */}
+                        </AccordionDetails>
+                    </Accordion>
                 </Grid>
             </Grid>
             
-            <Grid container style={{padding: "25px"}}>
-            {this.state.series?.map(i => 
-                <div style={{padding: "15px", width: "20px", margin: "5px", height:"20px", border: "3px solid red", borderRadius:"50%", background: "white", textAlign: "center", fontWeight: "bold", backgroundColor:this.state.selectedSeries?.includes(i) ? 'orange' : 'white'}}>
-                    {i}
-                </div>
-            )}
+            
+            <Grid container className="game-board">
+                <Grid item xs={12} sm={12} md={12}>
+                    <Card className="board-card">
+                    {this.state.series?.map(i => 
+                        <Chip label={i} variant={this.state.selectedSeries?.includes(i) ? 'filled' : 'outlined'} className={'coin'}></Chip>
+                    )}
+                    </Card>
+                </Grid>
             </Grid>
+            <Snackbar
+                anchorOrigin={{ vertical: "center", horizontal: "center" }}
+                open={this.state.open}
+                autoHideDuration={3000}
+                onClose={this.handleClose}
+                message={this.state.current}
+            />
         </React.Fragment>
     }
 }
