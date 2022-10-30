@@ -17,11 +17,13 @@ code {
   padding: 12px;
   text-align: center;
   color: white;
-  height: 80px;
-  font-size: 60px;
+  line-height: 1.5;
+  width: 75px;
+  font-size: 50px;
   cursor: pointer;
   border-radius: 0px;
   border: 1px solid black;
+  font-weight: bold;
 }
 
 .ticket:hover{
@@ -35,5 +37,13 @@ code {
 #root{
   background-color: #00000012 !important;
   height: 100vh;
+}
+.d-flex{
+  display: flex;
+}
+.gboard{
+  margin: auto;
+  display: table;
+  padding: 45px 0px 45px 0px;
 }
 

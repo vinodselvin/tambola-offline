@@ -89,8 +89,8 @@
   text-align: center; 
 }
 .game-title{
-  font-size: 50px;
-  letter-spacing: 10px;
+  /* font-size: 2.125rem; */
+  letter-spacing: 0.2rem;
   background-color: #1976d2;
   color: white;
   margin: 0px;
@@ -146,4 +146,25 @@
 }
 .w-name > .a-name{
   color: #1976d2;
+}
+
+@media screen and (max-width: 768px) {
+  .ticket {
+    font-size: 25px;
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 610px){
+  .ticket {
+    font-size: 18px;
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 374px){
+  .ticket {
+    font-size: 12px;
+    width: 10px;
+  }
 }
